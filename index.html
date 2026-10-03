@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan BK - SMPN Manbaul Falah Singojuruh</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Header / Navbar -->
+  <header class="sticky top-0 z-50 bg-emerald-700 text-white shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      
+      <!-- Logo & Nama Sekolah -->
+      <a href="#beranda" class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-emerald-700 font-bold text-xl shadow">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div>
+          <h1 class="font-bold text-base md:text-lg leading-tight">BK SMPN Manba'ul Falah</h1>
+          <p class="text-[10px] md:text-xs text-emerald-100">Singojuruh - Ramah, Empati & Profesional</p>
+        </div>
+      </a>
+
+      <!-- Desktop Menu (Tampilan Laptop/Desktop) -->
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="#beranda" class="hover:text-emerald-200 transition">Beranda</a>
+
+        <!-- Dropdown Layanan Siswa -->
+        <div class="relative group py-2">
+          <button class="flex items-center space-x-1 hover:text-emerald-200 focus:outline-none transition">
+            <span>Layanan Siswa</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+          </button>
+          <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white text-slate-800 rounded-xl shadow-xl border border-slate-100 overflow-hidden py-1 z-50 animate-fadeIn">
+            <a href="https://aeonrosyad.github.io/pengaduan-siswa/" class="flex items-center space-x-2 px-4 py-2.5 text-xs font-semibold hover:bg-emerald-50 hover:text-emerald-700 transition">
+              <i class="fa-solid fa-bullhorn w-4 text-emerald-600"></i>
+              <span>Pengaduan Siswa</span>
+            </a>
+            <a href="https://aeonrosyad.github.io/home-visit/" class="flex items-center space-x-2 px-4 py-2.5 text-xs font-semibold hover:bg-emerald-50 hover:text-emerald-700 transition">
+              <i class="fa-solid fa-house-user w-4 text-emerald-600"></i>
+              <span>Home Visit</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dropdown Layanan Dasar -->
+        <div class="relative group py-2">
+          <button class="flex items-center space-x-1 hover:text-emerald-200 focus:outline-none transition">
+            <span>Layanan Dasar</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+          </button>
+          <div class="absolute left-0 top-full hidden group-hover:block w-48 bg-white text-slate-800 rounded-xl shadow-xl border border-slate-100 overflow-hidden py-1 z-50 animate-fadeIn">
+            <a href="https://aeonrosyad.github.io/buku-tamu/" class="flex items-center space-x-2 px-4 py-2.5 text-xs font-semibold hover:bg-emerald-50 hover:text-emerald-700 transition">
+              <i class="fa-solid fa-book-bookmark w-4 text-emerald-600"></i>
+              <span>Buku Tamu</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="#bimbingan-klasikal" class="hover:text-emerald-200 transition">Bimbingan Klasikal</a>
+        <a href="#sosiometri" class="hover:text-emerald-200 transition">Sosiometri</a>
+        <a href="#konseling" class="bg-amber-400 hover:bg-amber-500 text-slate-900 px-4 py-2 rounded-full font-semibold transition text-xs shadow-md">Konseling Pribadi</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="md:hidden text-2xl focus:outline-none p-1 transition-transform">
+        <i id="menuIcon" class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Menu (Tampilan Smartphone) -->
+    <div id="mobileMenu" class="hidden md:hidden bg-emerald-800 border-t border-emerald-600 px-4 py-3 space-y-3 text-sm">
+      <a href="#beranda" class="mobile-link block py-1 text-emerald-100 hover:text-white">Beranda</a>
+      
+      <!-- Group Layanan Siswa (Mobile) -->
+      <div class="space-y-1 pl-2 border-l-2 border-emerald-500 my-2">
+        <p class="text-xs font-bold text-amber-300 uppercase tracking-wider">Layanan Siswa</p>
+        <a href="https://aeonrosyad.github.io/pengaduan-siswa/" class="mobile-link block py-1 text-emerald-100 hover:text-white text-xs flex items-center space-x-2">
+          <i class="fa-solid fa-bullhorn w-4"></i>
+          <span>Pengaduan Siswa</span>
+        </a>
+        <a href="https://aeonrosyad.github.io/home-visit/" class="mobile-link block py-1 text-emerald-100 hover:text-white text-xs flex items-center space-x-2">
+          <i class="fa-solid fa-house-user w-4"></i>
+          <span>Home Visit</span>
+        </a>
+      </div>
+
+      <!-- Group Layanan Dasar (Mobile) -->
+      <div class="space-y-1 pl-2 border-l-2 border-emerald-500 my-2">
+        <p class="text-xs font-bold text-amber-300 uppercase tracking-wider">Layanan Dasar</p>
+        <a href="#layanan-dasar" class="mobile-link block py-1 text-emerald-100 hover:text-white text-xs flex items-center space-x-2">
+          <i class="fa-solid fa-layer-group w-4"></i>
+          <span>Bidang Layanan</span>
+        </a>
+        <a href="https://aeonrosyad.github.io/buku-tamu/" class="mobile-link block py-1 text-emerald-100 hover:text-white text-xs flex items-center space-x-2">
+          <i class="fa-solid fa-book-bookmark w-4"></i>
+          <span>Buku Tamu BK</span>
+        </a>
+      </div>
+
+      <a href="#bimbingan-klasikal" class="mobile-link block py-1 text-emerald-100 hover:text-white">Bimbingan Klasikal</a>
+      <a href="#sosiometri" class="mobile-link block py-1 text-emerald-100 hover:text-white">Sosiometri</a>
+      <a href="#konseling" class="mobile-link block text-center bg-amber-400 text-slate-900 font-semibold py-2 rounded-lg text-xs mt-2">Konseling Pribadi</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="beranda" class="bg-gradient-to-br from-emerald-600 to-teal-800 text-white py-16 px-4">
+    <div class="container mx-auto max-w-4xl text-center">
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-4">Layanan Bimbingan & Konseling</h2>
+      <p class="text-emerald-100 text-base md:text-lg mb-8">Siap mendampingi siswa SMPN Manbaul Falah Singojuruh dalam berkembang, belajar, dan menyelesaikan hambatan secara merdeka dan percaya diri.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#konseling" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-semibold px-6 py-3 rounded-full shadow-md transition">Konseling Pribadi (WA)</a>
+        <a href="#sosiometri" class="bg-white/20 hover:bg-white/30 backdrop-blur-md text-white font-semibold px-6 py-3 rounded-full border border-white/40 transition">Isi Sosiometri</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container mx-auto px-4 py-12 max-w-6xl space-y-16">
+
+    <!-- Layanan Dasar -->
+    <section id="layanan-dasar">
+      <div class="text-center mb-10">
+        <h3 class="text-2xl font-bold text-emerald-800">Layanan Dasar BK</h3>
+        <p class="text-slate-600 text-sm">Program pengembangan diri, sosial, belajar, dan karir untuk seluruh siswa.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+            <i class="fa-solid fa-user-gear"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Bimbingan Pribadi</h4>
+          <p class="text-xs text-slate-500">Pengembangan pemahaman diri, sikap positif, dan pemahaman emosi.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Bimbingan Sosial</h4>
+          <p class="text-xs text-slate-500">Kemampuan berinteraksi, komunikasi, dan beradaptasi dengan lingkungan.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Bimbingan Belajar</h4>
+          <p class="text-xs text-slate-500">Pengembangan teknik belajar efektif dan manajemen waktu akademik.</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition">
+          <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <h4 class="font-semibold mb-2">Bimbingan Karir</h4>
+          <p class="text-xs text-slate-500">Pengenalan potensi diri dan perencanaan studi lanjut pasca SMP.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bimbingan Klasikal -->
+    <section id="bimbingan-klasikal" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+      <div class="mb-6">
+        <h3 class="text-2xl font-bold text-emerald-800">Materi Bimbingan Klasikal</h3>
+        <p class="text-slate-600 text-sm">Materi pembelajaran tatap muka/daring terjadwal di kelas.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="border rounded-xl p-5 hover:border-emerald-500 transition">
+          <span class="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-full font-medium">Kelas VII</span>
+          <h4 class="font-semibold text-lg mt-3 mb-2">Adaptasi di Lingkungan Sekolah Baru</h4>
+          <p class="text-xs text-slate-500 mb-4">Panduan mengenal budaya sekolah, teman sebaya, dan cara belajar di SMP.</p>
+          <a href="#" class="text-emerald-600 font-medium text-xs hover:underline flex items-center space-x-1">
+            <span>Download Materi (PDF)</span> <i class="fa-solid fa-download"></i>
+          </a>
+        </div>
+        <div class="border rounded-xl p-5 hover:border-emerald-500 transition">
+          <span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full font-medium">Kelas VIII</span>
+          <h4 class="font-semibold text-lg mt-3 mb-2">Mencegah Bullying & Perundungan</h4>
+          <p class="text-xs text-slate-500 mb-4">Membangun rasa empati, saling menghargai, serta menciptakan ruang aman di sekolah.</p>
+          <a href="#" class="text-emerald-600 font-medium text-xs hover:underline flex items-center space-x-1">
+            <span>Download Materi (PDF)</span> <i class="fa-solid fa-download"></i>
+          </a>
+        </div>
+        <div class="border rounded-xl p-5 hover:border-emerald-500 transition">
+          <span class="bg-purple-100 text-purple-800 text-xs px-2.5 py-1 rounded-full font-medium">Kelas IX</span>
+          <h4 class="font-semibold text-lg mt-3 mb-2">Perencanaan Lanjut Sekolah (SMA/SMK)</h4>
+          <p class="text-xs text-slate-500 mb-4">Mengenal perbedaan SMA, SMK, dan MA sesuai dengan bakat serta minat.</p>
+          <a href="#" class="text-emerald-600 font-medium text-xs hover:underline flex items-center space-x-1">
+            <span>Download Materi (PDF)</span> <i class="fa-solid fa-download"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sosiometri -->
+    <section id="sosiometri" class="bg-slate-100 p-8 rounded-2xl border border-slate-200">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+          <h3 class="text-2xl font-bold text-emerald-800">Formulir Sosiometri Siswa</h3>
+          <p class="text-slate-600 text-sm">Isi formulir ini untuk membantu Guru BK memahami dinamika hubungan sosial di kelasmu. (Data dijamin kerahasiaannya)</p>
+        </div>
+        <form id="formSosiometri" class="bg-white p-6 rounded-xl shadow-sm space-y-4">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap Siswa</label>
+            <input type="text" id="sosiometriNama" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600" placeholder="Contoh: Ahmad Fauzi">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Kelas</label>
+            <select id="sosiometriKelas" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600">
+              <option value="">-- Pilih Kelas --</option>
+              <option value="VII-A">VII-A</option>
+              <option value="VII-B">VII-B</option>
+              <option value="VIII-A">VIII-A</option>
+              <option value="VIII-B">VIII-B</option>
+              <option value="IX-A">IX-A</option>
+              <option value="IX-B">IX-B</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Teman yang Paling Disukai untuk Belajar Bersama (Pilihan 1)</label>
+            <input type="text" id="sosiometriPilihan1" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600" placeholder="Nama teman kelas">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Teman Pilihan Kedua (Pilihan 2)</label>
+            <input type="text" id="sosiometriPilihan2" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600" placeholder="Nama teman kelas">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 mb-1">Alasan Memilih</label>
+            <textarea id="sosiometriAlasan" rows="3" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600" placeholder="Mengapa kamu nyaman dengan teman tersebut?"></textarea>
+          </div>
+          <button type="submit" id="btnSosiometri" class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-2.5 rounded-lg text-sm transition">Kirim Data Sosiometri</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Konseling Pribadi -->
+    <section id="konseling" class="bg-emerald-900 text-white p-8 rounded-2xl shadow-lg">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="bg-amber-400 text-slate-900 text-xs px-3 py-1 rounded-full font-bold uppercase">Layanan Responsif</span>
+          <h3 class="text-3xl font-extrabold mt-3 mb-4">Layanan Konseling Pribadi</h3>
+          <p class="text-emerald-100 text-sm leading-relaxed mb-6">Punya kendala belajar, pribadi, atau hubungan sosial? Jangan ragu berkonsultasi secara rahasia. Kamu bisa memesan jadwal konseling yang tersimpan langsung di database dan menghubungi Guru BK secara otomatis melalui WhatsApp.</p>
+          <div class="flex items-center space-x-3 text-emerald-200 text-sm">
+            <i class="fa-solid fa-user-shield text-amber-400 text-xl"></i>
+            <span>Kerahasiaan data dan cerita kamu dijamin 100%.</span>
+          </div>
+        </div>
+
+        <form id="formKonseling" class="bg-white text-slate-800 p-6 rounded-xl shadow-md space-y-4">
+          <h4 class="font-bold text-lg text-emerald-800 border-b pb-2">Form Buat Janji Konseling</h4>
+          <div>
+            <label class="block text-xs font-semibold mb-1">Nama Lengkap</label>
+            <input type="text" id="konselingNama" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600" placeholder="Nama siswa">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold mb-1">Kelas</label>
+            <input type="text" id="konselingKelas" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600" placeholder="Contoh: IX-A">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold mb-1">Jenis Layanan / Masalah</label>
+            <select id="konselingMasalah" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600">
+              <option value="Masalah Belajar">Masalah Belajar</option>
+              <option value="Masalah Pribadi / Emosi">Masalah Pribadi / Emosi</option>
+              <option value="Masalah Pertemanan / Sosial">Masalah Pertemanan / Sosial</option>
+              <option value="Konsultasi Karir / Studi Lanjut">Konsultasi Karir / Studi Lanjut</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold mb-1">Rencana Tanggal</label>
+              <input type="date" id="konselingTanggal" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold mb-1">Rencana Waktu</label>
+              <input type="time" id="konselingWaktu" required class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-emerald-600">
+            </div>
+          </div>
+          <button type="submit" id="btnKonseling" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-lg text-sm transition flex justify-center items-center space-x-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Simpan & Chat Guru BK via WA</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
+    <div class="container mx-auto px-4 text-center text-xs space-y-2">
+      <p>&copy; 2026 Bimbingan Konseling SMPN Manbaul Falah Singojuruh. All rights reserved.</p>
+      <p class="text-slate-500">Mewujudkan Siswa Berkarakter, Mandiri, dan Berprestasi.</p>
+    </div>
+  </footer>
+
+  <!-- Script Navigation & Integrasi -->
+  <script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3YGUXL6DZ7ebtOnrY6DkgZTuDP1Pxuz-FYnxR5eteHC2pzxWzX-Jtw9VHUkkx0QdN/exec";
+    const WA_GURU_BK = "6285338299440";
+
+    // --- SCRIPT TOGGLE MOBILE MENU ---
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      // Ganti ikon bars ke xmark (silang) saat menu terbuka
+      if (mobileMenu.classList.contains('hidden')) {
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      } else {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      }
+    });
+
+    // Otomatis menutup menu setelah link diklik
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      });
+    });
+
+    // --- 1. Submit Sosiometri ke Google Sheets ---
+    document.getElementById("formSosiometri").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const btn = document.getElementById("btnSosiometri");
+      btn.disabled = true;
+      btn.innerText = "Mengirim...";
+
+      const payload = {
+        action: "sosiometri",
+        nama: document.getElementById("sosiometriNama").value,
+        kelas: document.getElementById("sosiometriKelas").value,
+        pilihan1: document.getElementById("sosiometriPilihan1").value,
+        pilihan2: document.getElementById("sosiometriPilihan2").value,
+        alasan: document.getElementById("sosiometriAlasan").value
+      };
+
+      fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        alert("Data Sosiometri berhasil dikirim! Terima kasih.");
+        document.getElementById("formSosiometri").reset();
+      })
+      .catch(err => {
+        alert("Terjadi kesalahan saat mengirim data.");
+        console.error(err);
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.innerText = "Kirim Data Sosiometri";
+      });
+    });
+
+    // --- 2. Submit Janji Konseling & WhatsApp Redirect ---
+    document.getElementById("formKonseling").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const btn = document.getElementById("btnKonseling");
+      btn.disabled = true;
+
+      const nama = document.getElementById("konselingNama").value;
+      const kelas = document.getElementById("konselingKelas").value;
+      const masalah = document.getElementById("konselingMasalah").value;
+      const tanggal = document.getElementById("konselingTanggal").value;
+      const waktu = document.getElementById("konselingWaktu").value;
+
+      const payload = {
+        action: "konseling",
+        nama: nama,
+        kelas: kelas,
+        masalah: masalah,
+        tanggal: tanggal,
+        waktu: waktu
+      };
+
+      fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        const pesanWA = `Halo Guru BK SMPN Manbaul Falah Singojuruh,%0A%0ASaya ingin mengajukan janji konseling:%0A- *Nama*: ${encodeURIComponent(nama)}%0A- *Kelas*: ${encodeURIComponent(kelas)}%0A- *Layanan*: ${encodeURIComponent(masalah)}%0A- *Rencana Pertemuan*: ${encodeURIComponent(tanggal)} jam ${encodeURIComponent(waktu)}%0A%0AMohon konfirmasinya. Terima kasih!`;
+        
+        window.open(`https://wa.me/${WA_GURU_BK}?text=${pesanWA}`, '_blank');
+        document.getElementById("formKonseling").reset();
+      })
+      .catch(err => {
+        alert("Gagal mengkoneksikan jadwal ke server.");
+        console.error(err);
+      })
+      .finally(() => {
+        btn.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>
